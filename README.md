@@ -1,258 +1,202 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PACKCULT SHOP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  box-sizing:border-box;
-}
+  <title>PACK CULT</title>
 
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:Arial,"Noto Sans Thai",sans-serif;
-  color:white;
-  background:
-    radial-gradient(circle at 20% 10%,#444 0%,transparent 30%),
-    radial-gradient(circle at 90% 90%,#333 0%,transparent 35%),
-    #050505;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  overflow-x:hidden;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body:before{
-  content:"";
-  position:fixed;
-  width:250px;
-  height:250px;
-  border-radius:50%;
-  background:#fff;
-  opacity:.06;
-  filter:blur(70px);
-  top:-80px;
-  left:-80px;
-  animation:move 7s infinite alternate;
-}
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 0%, #333 0%, #111 35%, #050505 75%);
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 45px 20px;
+    }
 
-.card{
-  width:100%;
-  max-width:500px;
-  padding:35px 22px 25px;
-  text-align:center;
-  background:linear-gradient(145deg,#242424,#090909);
-  border:1px solid #ffffff25;
-  border-radius:30px;
-  box-shadow:
-    0 25px 80px #000,
-    inset 0 1px #ffffff18;
-  animation:show .8s ease;
-}
+    .container {
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+    }
 
-.logo{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  object-fit:cover;
-  border:5px solid #111;
-  box-shadow:
-    0 0 0 2px #ffffff40,
-    0 0 35px #ffffff22;
-  margin-bottom:18px;
-}
+    .logo {
+      width: 115px;
+      height: 115px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: #fff;
+      color: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      box-shadow:
+        0 0 0 4px #222,
+        0 0 35px rgba(255,255,255,0.15);
+    }
 
-h1{
-  margin:0;
-  font-size:30px;
-  font-weight:900;
-  letter-spacing:3px;
-}
+    .brand {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      margin-bottom: 10px;
+    }
 
-.sub{
-  margin-top:8px;
-  margin-bottom:22px;
-  color:#999;
-  font-size:11px;
-  letter-spacing:4px;
-}
+    .tagline {
+      color: #999;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 35px;
+    }
 
-.message{
-  color:#ddd;
-  font-size:16px;
-  line-height:1.9;
-  margin-bottom:25px;
-}
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
 
-.fire{
-  display:inline-block;
-  animation:fire 1s infinite alternate;
-}
+      width: 100%;
+      height: 62px;
 
-.buttons{
-  display:grid;
-  gap:13px;
-}
+      margin: 15px 0;
 
-.btn{
-  min-height:60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:17px;
-  text-decoration:none;
-  font-size:16px;
-  font-weight:900;
-  transition:.25s;
-}
+      border: 1px solid #333;
+      border-radius: 16px;
 
-.btn:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 30px #000;
-}
+      background: linear-gradient(
+        135deg,
+        #1c1c1c,
+        #090909
+      );
 
-.facebook{
-  background:white;
-  color:#050505;
-}
+      color: #fff;
+      text-decoration: none;
 
-.instagram{
-  background:#111;
-  color:white;
-  border:1px solid #ffffff55;
-}
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
 
-.icon{
-  margin-right:10px;
-  font-size:22px;
-  font-weight:900;
-}
+      transition: all 0.25s ease;
 
-.footer{
-  margin-top:22px;
-  color:#666;
-  font-size:11px;
-  letter-spacing:1px;
-}
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.45);
+    }
 
-@keyframes show{
-  from{
-    opacity:0;
-    transform:translateY(30px) scale(.96);
-  }
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
+    .button:hover {
+      transform: translateY(-3px);
+      border-color: #777;
 
-@keyframes move{
-  from{
-    transform:translate(0,0);
-  }
-  to{
-    transform:translate(120px,100px);
-  }
-}
+      background: linear-gradient(
+        135deg,
+        #292929,
+        #111
+      );
 
-@keyframes fire{
-  from{
-    transform:translateY(0) rotate(-3deg);
-  }
-  to{
-    transform:translateY(-5px) rotate(3deg);
-  }
-}
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.7);
+    }
 
-@media(max-width:430px){
-  .card{
-    padding:28px 17px 22px;
-  }
+    .button:active {
+      transform: scale(0.97);
+    }
 
-  .logo{
-    width:155px;
-    height:155px;
-  }
+    .arrow {
+      position: absolute;
+      right: 20px;
+      font-size: 20px;
+      color: #777;
+    }
 
-  h1{
-    font-size:25px;
-  }
+    .note {
+      margin-top: 30px;
+      color: #666;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
 
-  .message{
-    font-size:15px;
-  }
-}
-</style>
+    .footer {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+      color: #555;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-top: 35px;
+      }
+
+      .brand {
+        font-size: 27px;
+      }
+
+      .button {
+        height: 60px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
+  <div class="container">
 
-  <!-- โลโก้แบบตัวอักษร -->
-  <div style="
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    margin:0 auto 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#fff;
-    color:#111;
-    border:6px solid #111;
-    box-shadow:0 0 0 2px #ffffff40,0 0 35px #ffffff22;
-    font-size:22px;
-    font-weight:900;
-    letter-spacing:2px;
-  ">
-    PACKCULT
-  </div>
+    <div class="logo">
+      PC
+    </div>
 
-  <h1>PACKCULT SHOP</h1>
+    <div class="brand">
+      PACK CULT
+    </div>
 
-  <div class="sub">
-    OFFICIAL SOCIAL LINKS
-  </div>
-
-  <div class="message">
-    ความฝันเล็กๆของเด็กสามคนที่อยากมีธุรกิจเป็นของตัวเอง
-    <span class="fire">🔥</span>
-    <br>
-    ฝากติดตามแฟนเพจและสนับสนุนพวกเราด้วยนะครับ 🥰
-  </div>
-
-  <div class="buttons">
+    <div class="tagline">
+      เท่ได้ • BE YOUR STYLE
+    </div>
 
     <a
-      class="btn facebook"
+      class="button"
       href="https://www.facebook.com/share/1DVBxNLHAD/"
       target="_blank"
+      rel="noopener noreferrer"
     >
-      <span class="icon">f</span>
-      ติดตามแฟนเพจ Facebook
+      FACEBOOK
+      <span class="arrow">›</span>
     </a>
 
     <a
-      class="btn instagram"
+      class="button"
       href="https://www.instagram.com/packcult.shop?igsh=ZDZybXI2cXV6ZGNs"
       target="_blank"
+      rel="noopener noreferrer"
     >
-      <span class="icon">◎</span>
-      ติดตาม Instagram
+      INSTAGRAM
+      <span class="arrow">›</span>
     </a>
 
-  </div>
+    <div class="note">
+      FOLLOW PACK CULT
+    </div>
 
-  <div class="footer">
-    © PACKCULT SHOP • DREAM BIG • START SMALL ❤️
-  </div>
+    <div class="footer">
+      PACK CULT © 2026
+    </div>
 
-</div>
+  </div>
 
 </body>
 </html>
